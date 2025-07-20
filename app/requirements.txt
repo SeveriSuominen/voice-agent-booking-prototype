@@ -1,0 +1,7 @@
+gradio==5.38.0
+fastrtc==0.0.29
+fastrtc[vad]==0.0.29
+openai==1.97.0
+openai-agents
+openai-agents[voice]
+numpy

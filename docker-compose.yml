@@ -1,0 +1,16 @@
+networks:
+  vab_network:
+    driver: bridge
+
+services:
+  vab_app:
+    build: ./app
+    container_name: vab_app
+    ports:
+      - "3000:3000"
+    env_file: .env
+    restart: unless-stopped
+    networks:
+      - vab_network
+    volumes:
+      - ./db:${TRANSIENT_DATA_DIR}:rw,z 

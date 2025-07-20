@@ -1,0 +1,34 @@
+{
+  "name": "Multi-Service Python Dev Container",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  // Primary service VS Code will attach to by default:
+  "service": "app",
+  // Make sure all three services start up:
+  "runServices": ["app"],
+  // Stop everything on VS Code shutdown
+  "shutdownAction": "stopCompose",
+  // Mount your code into every container
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.formatting.provider": "black"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  // Install your deps inside the container
+  "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
+  // Forward the ports your services expose
+  "forwardPorts": [3000]
+}
