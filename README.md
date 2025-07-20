@@ -6,24 +6,26 @@ The code is structured to be easily used as a reference for a more complete solu
 
 Watch the [video](https://youtu.be/QJi7tqnG7oc) example.
 
-To run this project you will need to provide your own .env file containing OpenAI API key, as well as following variables:
-```bash
-OPENAI_API_KEY=<YourOpenAIAPIKey>
-TRANSIENT_DATA_DIR=/vab_db/
-JSON_DB_FILE=bookings.json
-```
-
 ## Table of Contents
 - [Prerequisites](#prerequisites)
+- [Environment](#environment)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Environment](#development)
 
 ## Prerequisites
 
 - Docker \>= v27.5.1
 - Docker Compose \>= v2.38.2
 - Python 3.10+
+
+## Environment
+
+To run this project you will need to provide your own .env file containing OpenAI API key, as well as following variables:
+```bash
+OPENAI_API_KEY=<YourOpenAIAPIKey>
+TRANSIENT_DATA_DIR=/vab_db/
+JSON_DB_FILE=bookings.json
+```
 
 ## Installation
 
