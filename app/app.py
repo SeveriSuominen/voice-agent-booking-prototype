@@ -7,10 +7,6 @@ from enum import Enum, auto
 
 import numpy as np
 
-#import sounddevice as sd
-#from agents.voice import AudioInput
-#from agents.voice.input import TextInput
-
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, StreamingResponse
 from fastrtc import (
@@ -166,6 +162,7 @@ def pcm_to_wav_bytes(pcm_bytes: bytes, sample_rate: int) -> io.BytesIO:
     return buf
 
 # NOTE: For this prototype we actually support just one session
+
 # Buffers:
 audio_buffers: dict[str, bytearray] = {}
 conversation_histories: dict[str, list[dict]] = {}
