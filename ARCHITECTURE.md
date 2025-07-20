@@ -58,13 +58,18 @@ Azure Monitor and Application Insights collect logs and metrics from Functions, 
 
 ## Security & Privacy
 
-EncryptionAll data in transit is protected by TLS. Data at rest is encrypted by default in Azure SQL, Blob Storage, and Cosmos DB. Secrets and certificates are stored in Azure Key Vault with HSM-backed protection.
+### Encryption
 
-Network DefenseLayered defenses include the Application Gateway WAF, NSGs on subnets, and optional Azure DDoS Protection. Only proven traffic flows are permitted, preventing lateral movement and common attacks.
+All data in transit is protected by TLS. Data at rest is encrypted by default in Azure SQL, Blob Storage, and Cosmos DB. Secrets and certificates are stored in Azure Key Vault with HSM-backed protection.
 
-Application SecurityAPIs require authentication via Azure AD or OAuth. Input is validated, parameterized queries prevent injection, and functions run with minimal privileges. Managed Identities handle service-to-service authentication.
+### Network Defense
+Layered defenses include the Application Gateway WAF, NSGs on subnets, and optional Azure DDoS Protection. Only proven traffic flows are permitted, preventing lateral movement and common attacks.
 
-GDPR ComplianceWe minimize stored personal data, retain recordings only as necessary, and implement automated retention policies. Patients are informed of processing, and the system supports data subject requests for access, erasure, and portability. Audit trails document all data operations.
+### Application Security
+APIs require authentication via Azure AD or OAuth. Input is validated, parameterized queries prevent injection, and functions run with minimal privileges. Managed Identities handle service-to-service authentication.
+
+### GDPR Compliance
+We minimize stored personal data, retain recordings only as necessary, and implement automated retention policies. Patients are informed of processing, and the system supports data subject requests for access, erasure, and portability. Audit trails document all data operations.
 
 ## Performance & Scalability
 
